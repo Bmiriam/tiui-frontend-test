@@ -33,3 +33,9 @@ En esta prueba, deberás crear una aplicación web sencilla utilizando React jun
 
 1. **Fork a este repositorio:**
 2. **Cuanto todo este listo, genera un PR a con tu solución**
+
+## Instrucciones de ejecución
+1. **clone this project**
+2. **cd tiui-frontend-test\listapp**
+3. **npm install**
+4. **npm start**
