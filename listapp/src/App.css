@@ -1,38 +1,231 @@
-.App {
+:root {
+  --Black: #000000;
+  --Black-hover: #282525;
+  --Blue: #0b36e5;
+  --Blue-hover: #3266d7;
+  --Dark-Blue: #0c0454;
+  --Dark-Blue-hover: #061471;
+  --light-Blue: #7badfe;
+  --White: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  max-width: 768px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  background: #081832;
+  padding: 0 15px;
+}
+
+.container-list {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 350px;
+  background: linear-gradient(to right, var(--Dark-Blue), var(--light-Blue));
+}
+
+h1 {
   text-align: center;
+  color: var(--White);
+  font-size: 1.5rem;
+  margin-bottom: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.filter-tasks {
+  color: var(--White);
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-around;
+  font-size: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.filter-tasks h3 {
+  font-weight: 500;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.filter-tasks span {
+  font-weight: 500;
+  font-size: 1rem;
+  margin-left: 3px;
+}
+
+ul {
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
+  gap: 10px;
+}
+
+ul li {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+ul li span {
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+ul li form {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-update {
+  border: none;
+  font-weight: 500;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--White);
+  width: 100%;
+  background: none;
+  outline: none;
+}
+
+.container-done {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--White);
+  cursor: pointer;
+}
+
+.container-filter{
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--White);
+  cursor: pointer;
+  margin:10px;
+}
+
+.container-done.active {
+  background-color: var(--White);
+}
+
+.text-decoration-dashed {
+  text-decoration: line-through;
+}
+
+.delete-button, .edit-button, .add-button {
+  padding: 10px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border: none;
+  border-radius: 50%;
+  transition: all 0.3s;
+  cursor: pointer;
+  font-family: inherit;
 }
 
-.App-link {
-  color: #61dafb;
+.delete-button {
+  background-color: var(--Black);
+  color: var(--White);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.delete-button:hover {
+  background-color: var(--Black-hover);
+}
+
+.edit-button {
+  background-color: var(--Blue);
+  color: var(--White);
+}
+
+.edit-button:hover {
+  background-color: var(--Blue-hover);
+}
+
+.add-button {
+  background-color: var(--Dark-Blue);
+  color: var(--White);
+}
+
+.add-button:hover {
+  background-color: var(--Dark-Blue-hover);
+}
+
+form {
+  display: flex;
+  gap: 10px;
+}
+
+.addTask h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.input-add {
+  border: none;
+  outline: none;
+  padding: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  flex: 1;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--Dark-Blue);
+}
+
+@media (min-width: 768px) {
+  body {
+    max-width: 1440px;
+    margin: 40px auto;
+    padding: 0;
   }
-  to {
-    transform: rotate(360deg);
+
+  .container-list {
+    max-width: 700px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .filter-tasks {
+    margin: 40px 0;
+    font-size: 1.2rem;
+  }
+
+  .filter-tasks span {
+    font-size: 1.5rem;
+  }
+
+  ul {
+    margin-top: 40px;
+    gap: 15px;
+  }
+
+  .input-update {
+    font-size: 1.2rem;
+  }
+
+  .delete-button, .edit-button, .add-button {
+    padding: 15px;
+  }
+
+  .addTask h3 {
+    font-size: 1.5rem;
+  }
+
+  .input-add {
+    font-size: 1.1rem;
   }
 }
